@@ -25,9 +25,7 @@ public class FixedWindowRateLimiter {
             this.requestLimit = requestLimit;
         }
 
-        // Keep the monotonic timestamp check and its update together for callers
-        // sharing this limiter instance.
-        synchronized boolean allow(long timestamp) {
+        boolean allow(long timestamp) {
             if (timestamp < previousTimestamp) {
                 return false;
             }
