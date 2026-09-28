@@ -14,3 +14,6 @@ Co-authored with OpenAI Codex.
 - **Sliding window counter:** Estimates a rolling count from the current and weighted previous windows.
   - **Benefit:** Uses constant storage per subject.
   - **Drawback:** Its weighted estimate can differ from the exact request count.
+- **Probabilistic throttling:** Decreases acceptance probability as a fixed window fills.
+  - **Benefit:** Smoothly sheds traffic before reaching the hard limit.
+  - **Drawback:** May reject requests even when capacity remains.
